@@ -1,11 +1,7 @@
 
 package ti11;
 import java.util.Scanner;
-public class E05SumRestMatrices {
-    // Parcial sera con matrices, metodos y funciones
-    
-
-
+public class E05SumRestMatrices {    
 
 /**
 Desarrolla una solución en pseudocódigo que permita mediante un menú (al estilo calculadora matemática), facilitar las operaciones de suma, resta de dos matrices.
@@ -13,10 +9,10 @@ Considerar la validación de las reglas para realizar estas operaciones.
 Nota: Las matrices se deben llenar con número aleatorios únicos enteros positivos o negativos (-9-0, 0-9).
  * 
  */
-   
-        
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in); int limitMt = 3;
+        Scanner sc = new Scanner(System.in); int limitMt;
+        System.out.println("Ingrese el limite de la matriz");
+        limitMt= sc.nextInt();
         int mt1[][] = new int[limitMt][limitMt];
         int mt2[][] = new int[limitMt][limitMt];
         int matrizResultado[][] = new int[limitMt][limitMt];
