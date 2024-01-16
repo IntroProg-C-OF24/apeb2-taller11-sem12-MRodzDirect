@@ -1,7 +1,7 @@
 
 package ti11;
 import java.util.Scanner;
-public class E05SumRestMatrices {    
+public class E05SumRestMultDivMatrices {    
 
 /**
 Desarrolla una solución en pseudocódigo que permita mediante un menú (al estilo calculadora matemática), facilitar las operaciones de suma, resta de dos matrices.

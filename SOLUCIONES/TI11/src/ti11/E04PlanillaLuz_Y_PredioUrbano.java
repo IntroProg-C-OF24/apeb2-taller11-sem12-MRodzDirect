@@ -2,12 +2,12 @@
 package ti11;
 import java.util.Scanner;
 public class E04PlanillaLuz_Y_PredioUrbano {
+    static String report;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int operacion;
         float costKw, spentKw, houseValue;
         String nombre, cedula;
-        String report[] = new String[1];
         System.out.println("Ingrese la operacion que desea hacer");
         operacion = sc.nextInt();
         System.out.println("Ingrese su nombre y cedula");
@@ -20,32 +20,32 @@ public class E04PlanillaLuz_Y_PredioUrbano {
                 costKw = sc.nextFloat();
                 System.out.println("Ingrese cuantas Kilovatios usted gasto en este mes");
                 spentKw = sc.nextFloat();
-                calcularPlanillaLuz(costKw, spentKw,nombre,cedula,report);
-                System.out.println(report[0]);
+                calcularPlanillaLuz(costKw, spentKw,nombre,cedula);
+                System.out.println(report);
                 break;
             case 2: 
                 System.out.println("==Calcular su Predio Urbano==");
                 System.out.println("Ingrese el valor de su inmueble");
                 houseValue = sc.nextFloat();
-                calcularPredioUrbano(houseValue,nombre,cedula,report);
-                System.out.println(report[0]);
+                System.out.println(calcularPredioUrbano(houseValue,nombre,cedula));
                 break;
             default:
                 System.out.println("Operacion no valida, debe estar entre (1-2)");
         }
     }
-    public static void calcularPlanillaLuz(float costKw,float spentKw, String nombre, String cedula, String report[]) {
+    public static void calcularPlanillaLuz(float costKw,float spentKw, String nombre, String cedula) {
         float valorPlanilla;
         
         valorPlanilla = costKw * spentKw;
-        report[0] = String.format("Cliente %s con cédula %s debe cancelar el valor de %.2f",nombre,cedula,valorPlanilla);
+        report = String.format("Cliente %s con cédula %s debe cancelar el valor de %.2f",nombre,cedula,valorPlanilla);
 }
-        public static void calcularPredioUrbano(float houseValue,String nombre, String cedula, String report[]) {
+    public static String calcularPredioUrbano(float houseValue,String nombre, String cedula) {
         float valorPredio;
-        
+        String report2;
         valorPredio = (float) (houseValue * 0.02);
-        report[0] = String.format("Cliente %s con cédula %s  tiene un bien inmueble valorado en %d $ y tiene que pagar de predio de %.2f $",nombre,cedula,(int)houseValue,valorPredio);
-}
+        report2 = String.format("Cliente %s con cédula %s  tiene un bien inmueble valorado en %d $ y tiene que pagar de predio de %.2f $",nombre,cedula,(int)houseValue,valorPredio);
+        return report2;
+    }
 }
 
 /*

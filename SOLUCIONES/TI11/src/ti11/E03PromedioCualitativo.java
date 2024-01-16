@@ -3,6 +3,7 @@ package ti11;
 
 import java.util.Scanner;
 public class E03PromedioCualitativo {
+    static String mensaje;
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
         double nota, nota2, nota3, nota4;
@@ -11,10 +12,10 @@ public class E03PromedioCualitativo {
         nota2 = sc.nextDouble();
         nota3 = sc.nextDouble();
         nota4 = sc.nextDouble();
-        System.out.println(promCualitativo(nota, nota2, nota3, nota4));
+        promCualitativo(nota, nota2, nota3, nota4);
+        presentarPromCualitativo();
     }
     public static String promCualitativo(double nota,double nota2,double nota3,double nota4){
-        String mensaje;
         double prom;
         prom = (nota+nota2+nota3+nota4)/4;
         if (prom>0&&prom<=5){
@@ -37,6 +38,9 @@ public class E03PromedioCualitativo {
         }
         return mensaje;
 }
+    public static void presentarPromCualitativo(){
+        System.out.println(mensaje);
+    }
 }
 
 /*
