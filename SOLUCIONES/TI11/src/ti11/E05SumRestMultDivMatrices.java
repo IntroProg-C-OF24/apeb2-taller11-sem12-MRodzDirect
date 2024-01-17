@@ -90,9 +90,15 @@ Nota: Las matrices se deben llenar con número aleatorios únicos enteros positi
 
         }
            public static void multiplicarMatrices(int mt1[][], int mt2[][], int matrizResultado[][]) { 
-            for (int i = 0; i < matrizResultado.length; i++) {
-                for (int j = 0; j < matrizResultado.length; j++) {
-                    matrizResultado[i][j] = mt1[i][j] * mt2[i][j];
+               int filasMt1 = mt1.length;
+               int columnasMt1 = mt1[0].length; 
+               int columnasMt2 = mt2[0].length; 
+               for (int i = 0; i < filasMt1; i++) {
+                for (int j = 0; j < columnasMt2; j++) {
+                    matrizResultado[i][j]=0;
+                    for (int k = 0; k < columnasMt1; k++) {
+                     matrizResultado[i][j] += mt1[i][k] * mt2[k][j];   
+                    }
                 }
             }
 
@@ -109,15 +115,20 @@ Nota: Las matrices se deben llenar con número aleatorios únicos enteros positi
            }
 
            public static void dividirMatrices(double mtdouble[][], double mtdouble2[][], double mtResultadodouble[][]) { 
-            for (int i = 0; i < mtResultadodouble.length; i++) {
-                for (int j = 0; j < mtResultadodouble.length; j++) {
-                    mtResultadodouble[i][j] = mtdouble[i][j] / mtdouble2[i][j];
+               int filasMt1 = mtdouble.length;
+               int columnasMt1 = mtdouble[0].length; 
+               int columnasMt2 = mtdouble2[0].length; 
+               for (int i = 0; i < filasMt1; i++) {
+                for (int j = 0; j < columnasMt2; j++) {
+                    mtResultadodouble[i][j]=0;
+                    for (int k = 0; k < columnasMt1; k++) {
+                     mtResultadodouble[i][j] += mtdouble[i][k] / mtdouble2[k][j];   
+                    }
                 }
             }
-
-        }
            
     }
+}
 
 /*
 La matriz 1 generada es:
